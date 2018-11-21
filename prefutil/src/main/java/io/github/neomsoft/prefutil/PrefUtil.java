@@ -69,7 +69,7 @@ public class PrefUtil {
         sharedPreferences.edit().clear().apply();
     }
 
-    public SharedPreferences.Editor getEditor() {
-        return sharedPreferences.edit();
+    public SharedPreferences getSharedPreferences() {
+        return sharedPreferences;
     }
 }
