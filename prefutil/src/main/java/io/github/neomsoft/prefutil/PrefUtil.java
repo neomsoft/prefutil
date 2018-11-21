@@ -3,6 +3,8 @@ package io.github.neomsoft.prefutil;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.Map;
+
 public class PrefUtil {
 
     private SharedPreferences sharedPreferences;
@@ -33,5 +35,41 @@ public class PrefUtil {
 
     public void setBoolean(String key, boolean value) {
         sharedPreferences.edit().putBoolean(key, value).apply();
+    }
+
+    public float getFloat(String key, float baseValue) {
+        return sharedPreferences.getFloat(key, baseValue);
+    }
+
+    public void setFloat(String key, float value) {
+        sharedPreferences.edit().putFloat(key, value).apply();
+    }
+
+    public long getLong(String key, long baseValue) {
+        return sharedPreferences.getLong(key, baseValue);
+    }
+
+    public void setLong(String key, long value) {
+        sharedPreferences.edit().putLong(key, value).apply();
+    }
+
+    public Map<String, ?> getAll() {
+        return sharedPreferences.getAll();
+    }
+
+    public boolean contains(String key) {
+        return sharedPreferences.contains(key);
+    }
+
+    public void remove(String key) {
+        sharedPreferences.edit().remove(key).apply();
+    }
+
+    public void clear() {
+        sharedPreferences.edit().clear().apply();
+    }
+
+    public SharedPreferences.Editor getEditor() {
+        return sharedPreferences.edit();
     }
 }
